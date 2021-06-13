@@ -36,14 +36,14 @@ public class ManagingController {
 
 	@ApiOperation(value = "Create a single table")
 	@PostMapping(path = "/create-table")
-	public ResponseEntity<String> doPost() {
+	public ResponseEntity<String> addTable() {
 		cafeService.addTable();
 		return new ResponseEntity<String>(CafeMessages.CREATED, HttpStatus.CREATED);
 	}
 
 	@ApiOperation(value = "Create a single product")
 	@PostMapping(path = "/create-product")
-	public ResponseEntity<String> doPost(@Valid @RequestBody ProductDto productDto) {
+	public ResponseEntity<String> addProduct(@Valid @RequestBody ProductDto productDto) {
 		cafeService.addProduct(productDto);
 		return new ResponseEntity<String>(CafeMessages.CREATED, HttpStatus.CREATED);
 	}
